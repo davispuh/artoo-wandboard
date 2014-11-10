@@ -1,3 +1,3 @@
-require 'lib/artoo/adaptors/wandboard'
-require 'lib/artoo/drivers/wandboard'
-require 'lib/artoo-wandboard/version'
+require 'artoo/adaptors/wandboard'
+require 'artoo/drivers/wandboard'
+require 'artoo-wandboard/version'
