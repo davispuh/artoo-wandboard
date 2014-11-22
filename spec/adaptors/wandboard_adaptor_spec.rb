@@ -30,6 +30,11 @@ describe Artoo::Adaptors::Wandboard do
 
         describe '#disconnect' do
             it 'should disconnect from Wandboard hardware' do
+                adaptor.connect
+                allow(Artoo::Adaptors::IO::DigitalPin).to receive(:new).with(200, 'r') { pin }
+                allow(pin).to receive(:digital_read) { 1 }
+                expect(pin).to receive(:close)
+                adaptor.digital_read(:JP4_12)
                 expect(adaptor.disconnect).to be true
             end
         end

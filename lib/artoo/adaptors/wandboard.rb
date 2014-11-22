@@ -37,7 +37,7 @@ module Artoo
       # Closes connection with device
       # @return [Boolean]
       def disconnect
-        @pins.each { |p| p.close } if @pins
+        @pins.each { |n, p| p.close } if @pins
         @pins = {}
         super
       end
